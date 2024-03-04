@@ -37,9 +37,10 @@ Moreover, the confusion matrices are used to provide a detailed and visual under
 
 # 4. Result
 ## 4.1.  Unbalanced data
-The number of data with a rating of 1 in the training data is about 2.55 times the number of data with a rating of -1. And in the validation data, there is about 2.76 times (see 
- ![Figure1](https://github.com/Yuqi-D/Medical-Review-Sentiment-Analysis_ML/blob/main/img/F1.png)
- Figure 1. Therefore, accuracy is not enough for evaluation. 
+The number of data with a rating of 1 in the training data is about 2.55 times the number of data with a rating of -1. And in the validation data, there is about 2.76 times (see Figure 1.) Therefore, accuracy is not enough for evaluation.  
+
+![Figure1](https://github.com/Yuqi-D/Medical-Review-Sentiment-Analysis_ML/blob/main/Img/F1.png)
+ 
 Figure 1. The bar chart of the datasets
 ## 4.2. Evaluation of all models
 Table 1 and Table 2 show that the Bagging model has the best performance in all metrics and datasets.
@@ -62,25 +63,36 @@ Table 2. The Evaluation of TFIDF dataset
 ## 4.3. Confusion Matrixes
 As can be seen from Figures 4.1-4.3, most of the predictions are correct. The ratio between the values of (1, 1) and (-1, -1) is similar to the ratio between rating of 1 and -1 in the original data. The performance of  bagging model is the best.
 
+![Figure4.1](https://github.com/Yuqi-D/Medical-Review-Sentiment-Analysis_ML/blob/main/Img/F4.1.png)
   
 Figure 4.1. Confusion matrix of one R model 
+
+![Figure4.2](https://github.com/Yuqi-D/Medical-Review-Sentiment-Analysis_ML/blob/main/Img/F4.2.png)
   
 Figure 4.2. Confusion matrix of decision tree model 
+
+![Figure4.3](https://github.com/Yuqi-D/Medical-Review-Sentiment-Analysis_ML/blob/main/Img/F4.3.png)
   
 Figure 4.3. Confusion matrix of bagging model 
 4.4. Feature Selection
-For the word embeddings datasets (See Figure 2), it has the best performance for both methods at k = 100. For TFIDF (See Figure 3), its accuracy increases as k increases and the best one is “200” .
+For the word embeddings datasets (See Figure 2), it has the best performance for both methods at k = 100. For TFIDF (See Figure 3), its accuracy increases as k increases and the best one is “200”.
 
+![Figure2](https://github.com/Yuqi-D/Medical-Review-Sentiment-Analysis_ML/blob/main/Img/F2.png)
  
 Figure 2. Word embeddings dataset feature selection
+
+![Figure3](https://github.com/Yuqi-D/Medical-Review-Sentiment-Analysis_ML/blob/main/Img/F3.png)
  
 Figure 3. TFIDF dataset feature selection
 4.5. Learning Curve
 From Figures 5, the chosen depth is 11 for all the datasets with word embeddings. The chosen depth for all the datasets with TFIDF is 46. Because both datasets are good with higher accuracy at this point (See Figure 5.1-5.2, Table 3).
+
+![Figure5.1](https://github.com/Yuqi-D/Medical-Review-Sentiment-Analysis_ML/blob/main/Img/F5.1.png)
  
-Figure 5.1. Decision tree learning curve 
-(word embeddings)
- 
+Figure 5.1. Decision tree learning curve (word embeddings)
+
+![Figure5.2](https://github.com/Yuqi-D/Medical-Review-Sentiment-Analysis_ML/blob/main/Img/F5.2.png)
+
 Figure 5.2 Decision tree learning curve (TFIDF)
 
 
@@ -97,8 +109,11 @@ Table 3. The Accuracy after adjustment parameters
 # 5. Discussion
 Without considering the gender, bagging model with TFIDF dataset performs the best of all (See Table 1-3). The Bagging model is a classifier with almost no gender bias as performs very fairly in the dataset of the word embedding representation with different genders. It is also accurate for both males and females in the dataset of the TFIDF representation, but it performs poorly in the dataset for gender unknown. The One R model seems to be the most unfair compared to the other two models. (See Figure 6.1-6.2). The TFIDF vocabulary contains some unnecessary information that affects accuracy such as the number '100'. In addition, since the number of unknowns is much smaller than the number of male and female, this is more likely to lead to bias in accuracy. Overall, male’s will be slightly more accurate than female’s, probably because male has about 2.39 times as many comments as females.
 
+![Figure6.1](https://github.com/Yuqi-D/Medical-Review-Sentiment-Analysis_ML/blob/main/Img/F6.1.png)
  
 Figure 6.1. Accuracies (TFIDF) of 3 models with different genders
+
+![Figure6.2](https://github.com/Yuqi-D/Medical-Review-Sentiment-Analysis_ML/blob/main/Img/F6.2.png)
  
 Figure 6.2. Accuracies (TFIDF) of 3 models with different genders
 
